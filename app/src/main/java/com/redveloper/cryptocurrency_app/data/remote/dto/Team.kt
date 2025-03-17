@@ -5,17 +5,17 @@ import com.redveloper.cryptocurrency_app.domain.model.TeamMember
 
 data class Team(
     @SerializedName("id")
-    val id: String,
+    val id: String?,
     @SerializedName("team")
-    val name: String,
+    val name: String?,
     @SerializedName("position")
-    val position: String
+    val position: String?
 )
 
 fun Team.toTeamMember(): TeamMember {
     return TeamMember(
-        id = id,
-        name = name,
-        position = position
+        id = id ?: "",
+        name = name ?: "",
+        position = position ?: ""
     )
 }
