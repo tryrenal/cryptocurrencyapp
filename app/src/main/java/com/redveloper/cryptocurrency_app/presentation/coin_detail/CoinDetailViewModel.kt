@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.redveloper.cryptocurrency_app.common.Constants
 import com.redveloper.cryptocurrency_app.common.Resource
 import com.redveloper.cryptocurrency_app.domain.usecase.get_coin.GetCoinUseCase
-import com.redveloper.cryptocurrency_app.domain.usecase.get_coins.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -17,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CoinDetailViewModel @Inject constructor(
     private val getCoinUseCase: GetCoinUseCase,
-    private val savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle
 ): ViewModel(){
 
     private val _state = mutableStateOf<CoinDetailState>(CoinDetailState())
